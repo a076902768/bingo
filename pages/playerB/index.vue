@@ -62,10 +62,10 @@ export default {
       const ref = db.collection('bingo').doc('userData')
       ref
         .update({
-          userA: false,
+          userB: false,
         })
         .then(() => {
-          alert('userA已變更為false')
+          alert('userB已變更為false')
         })
     },
     // 取得隨機亂數
