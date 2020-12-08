@@ -12,6 +12,20 @@
         {{ box.value }}
       </div>
     </div>
+    <el-dialog
+      center
+      :visible.sync="dialogVisible"
+      width="20%"
+      :before-close="handleClose"
+      :show-close="false"
+    >
+      <span class="el-title">請輸入您的ID</span>
+      <el-input v-model="userId"></el-input>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="userId = ''">重 置</el-button>
+        <el-button type="primary" @click="setUserId">確 定</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 <script>
@@ -41,6 +55,10 @@ export default {
         slash2: [],
       },
       lineCount: 0,
+      // ----element-ui----
+      dialogVisible: true,
+      // ----firebase----
+      userId: '',
     }
   },
   mounted() {
@@ -52,6 +70,8 @@ export default {
     vm.boxinit()
   },
   methods: {
+    // 設置userID(firebase)，並確認是否已有存在ID
+    setUserId() {},
     // 取得隨機亂數
     getRandom() {
       return Math.floor(Math.random() * 25) + 1
