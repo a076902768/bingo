@@ -11,10 +11,10 @@ export default {
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: ['@/assets/scss/all.scss'],
+  css: ['@/assets/scss/all.scss', 'element-ui/lib/theme-chalk/index.css'],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: ['~/plugins/firebase'],
+  plugins: ['~/plugins/firebase', '~/plugins/element-ui'],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -35,5 +35,7 @@ export default {
   axios: {},
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {},
+  build: {
+    vendor: ['element-ui'],
+  },
 }

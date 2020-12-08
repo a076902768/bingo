@@ -50,24 +50,8 @@ export default {
     })
     const vm = this
     vm.boxinit()
-    window.addEventListener('beforeunload', (e) => vm.closeEvent(e))
-  },
-  destroyed() {
-    const vm = this
-    window.removeEventListener('beforeunload', (e) => vm.closeEvent(e))
   },
   methods: {
-    // 當頁面關閉時執行
-    closeEvent() {
-      const ref = db.collection('bingo').doc('userData')
-      ref
-        .update({
-          userB: false,
-        })
-        .then(() => {
-          alert('userB已變更為false')
-        })
-    },
     // 取得隨機亂數
     getRandom() {
       return Math.floor(Math.random() * 25) + 1

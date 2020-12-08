@@ -12,9 +12,8 @@ export default {
     }
   },
   mounted() {
-    const vm = this
-    vm.getUserType()
-    // vm.closeEvent()
+    // const vm = this
+    // vm.getUserType()
   },
   methods: {
     // 判斷進入的user類型 userA userB 或是 userC(進入聊天室)
@@ -49,30 +48,6 @@ export default {
           })
       }
     },
-    // 當頁面關閉時執行
-    // closeEvent() {
-    //   const vm = this
-    //   window.onbeforeunload = (e) => {
-    //     const ref = db.collection('bingo').doc('userData')
-    //     if (vm.user === 'userA') {
-    //       ref
-    //         .update({
-    //           userA: false,
-    //         })
-    //         .then(() => {
-    //           alert('userA已變更為false')
-    //         })
-    //     } else if (vm.user === 'userB') {
-    //       ref
-    //         .update({
-    //           userB: false,
-    //         })
-    //         .then(() => {
-    //           alert('userB已變更為false')
-    //         })
-    //     }
-    //   }
-    // },
   },
 }
 </script>
